@@ -54,6 +54,9 @@ benchmark-data_150.bsearch : data/data_150.bsearch.bin data/random_requests.txt
 	 bash -c "time cat data/random_requests.txt | python use-bsearch.py data/data_150.bsearch.bin | wc -l"
 	 bash -c "time cat data/random_requests.txt data/random_requests.txt | python use-bsearch.py data/data_150.bsearch.bin | wc -l"
 
+.PHONY : benchmark-data_150
+benchmark-data_150 : benchmark-data_150.trie1 benchmark-data_150.trie2 benchmark-data_150.bsearch
+
 data/random_prefixes_150.txt : | data
 	python gen-random-prefixes.py 42 2 0.25 150_000_000 > $@
 
@@ -95,3 +98,7 @@ benchmark-random_prefixes_150.trie2 : data/random_prefixes_150.trie2.bin data/ra
 benchmark-random_prefixes_150.bsearch : data/random_prefixes_150.bsearch.bin data/random_requests.txt
 	 bash -c "time cat data/random_requests.txt | python use-bsearch.py data/random_prefixes_150.bsearch.bin | wc -l"
 	 bash -c "time cat data/random_requests.txt data/random_requests.txt | python use-bsearch.py data/random_prefixes_150.bsearch.bin | wc -l"
+
+.PHONY : benchmark-random_prefixes_150
+benchmark-random_prefixes_150 : benchmark-random_prefixes_150.trie1 benchmark-random_prefixes_150.trie2 benchmark-random_prefixes_150.bsearch
+
