@@ -41,7 +41,7 @@ def prefix_len(trie, s):
         if trie[p] & 1 != 0:
             j = k
 
-        # this is a leaf (no subtree) 
+        # this is a leaf (no subtree)
         if trie[p] < 2:
             break
 
