@@ -108,7 +108,7 @@ benchmark : benchmark-data_150 benchmark-random_prefixes_150
 
 .PHONY : test
 test : data/result-data_150.trie1.txt data/result-data_150.trie2.txt data/result-data_150.bsearch.txt data/result-random_prefixes_150.trie1.txt data/result-random_prefixes_150.trie2.txt data/result-random_prefixes_150.bsearch.txt
-	diff data/result-data_150.trie1.txt data/result-data_150.trie2.txt 
+	diff data/result-data_150.trie1.txt data/result-data_150.trie2.txt
 	diff data/result-data_150.trie2.txt data/result-data_150.bsearch.txt
 	diff data/result-random_prefixes_150.trie1.txt data/result-random_prefixes_150.trie2.txt
 	diff data/result-random_prefixes_150.trie2.txt data/result-random_prefixes_150.bsearch.txt
